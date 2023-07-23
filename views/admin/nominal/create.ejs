@@ -1,0 +1,136 @@
+<%- include('../../partials/header.ejs') %>
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+  <!-- Sidebar -->
+  <%- include('../../partials/sidebar.ejs') %>
+  <!-- End of Sidebar -->
+
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+    <!-- Main Content -->
+    <div id="content">
+      <!-- Topbar -->
+      <%- include('../../partials/navbar.ejs') %>
+      <!-- End of Topbar -->
+
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+        <section class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1>Nominal</h1>
+              </div>
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="/">Home</a></li>
+                  <li class="breadcrumb-item">
+                    <a href="/nominal">Nominal</a>
+                  </li>
+                  <li class="breadcrumb-item active">Add</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">
+                      <a href="/nominal/create" class="btn btn-primary">
+                        <i class="nav-icon far fa-plus-square"></i> Add
+                      </a>
+                    </h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                    <div class="card card-primary">
+                      <div class="card-header">
+                        <h3 class="card-title">Form Add Nominal</h3>
+                      </div>
+                      <!-- /.card-header -->
+                      <!-- form start -->
+                      <form action="/nominal/create" method="POST">
+                        <div class="card-body">
+                          <div class="form-group">
+                            <label>Coin Name</label>
+                            <select
+                              class="form-control select2"
+                              style="width: 100%"
+                              name="coinName"
+                              data-placeholder="Choose Coin"
+                              required
+                            >
+                              <option value="" selected disabled hidden>
+                                Choose Coin Name
+                              </option>
+                              <option value="Gold">Gold</option>
+                              <option value="Diamond">Diamond</option>
+                              <option value="Jewel">Jewel</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="name">Number of coins</label>
+                            <input
+                              type="number"
+                              class="form-control"
+                              name="coinQuantity"
+                              id="coinQuantity"
+                              placeholder="Enter the number of coins"
+                              required
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label for="name">Price</label>
+                            <input
+                              type="number"
+                              class="form-control"
+                              name="price"
+                              id="price"
+                              placeholder="Enter the price"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <!-- /.card-body -->
+
+                        <div class="card-footer">
+                          <button type="submit" class="btn btn-primary">
+                            Submit
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+
+                <!-- /.card -->
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </section>
+      </div>
+      <!-- /.container-fluid -->
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <%- include('../../partials/footer.ejs') %>
+    <!-- End of Footer -->
+  </div>
+  <!-- End of Content Wrapper -->
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Bootstrap core JavaScript-->
+<%- include('../../partials/js.ejs') %>

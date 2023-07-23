@@ -1,0 +1,42 @@
+<!-- DataTales Example -->
+<div class="table-responsive">
+  <table
+    class="table table-bordered"
+    id="dataTable"
+    width="100%"
+    cellspacing="0"
+  >
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Name</th>
+        <th>Number of coins</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for( let i = 0; i < nominal.length; i++ ) { %>
+      <tr>
+        <td><%= i + 1 %></td>
+        <td><%= nominal[i].coinName %></td>
+        <td><%= nominal[i].coinQuantity %></td>
+        <td><%= nominal[i].price %></td>
+        <td>
+          <form
+            action="/nominal/delete/<%= nominal[i]._id %>?_method=DELETE"
+            method="POST"
+          >
+            <a href="/nominal/edit/<%= nominal[i]._id %>" class="btn btn-info">
+              <i class="fas fa-pencil-alt"></i> Edit</a
+            >
+            <button class="btn btn-danger">
+              <i class="fas fa-trash"></i> Delete
+            </button>
+          </form>
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>

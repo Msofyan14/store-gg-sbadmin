@@ -1,0 +1,10 @@
+MODE=
+SERVICE_NAME=
+MONGO_URL=
+SECRET=
+
+export FLYCTL_INSTALL="/home/sofyan/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+  
+
+
