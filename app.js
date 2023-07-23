@@ -18,6 +18,7 @@ const usersRouter = require("./app/users/router");
 const transactionsRouter = require("./app/transactions/router");
 const playersRouter = require("./app/player/router");
 const authRouter = require("./app/auth/router");
+const { default: mongoose } = require("mongoose");
 
 const app = express();
 const URL = "/api/v1";
@@ -30,9 +31,12 @@ app.set("view engine", "ejs");
 app.use(
   session({
     secret: "keyboard cat",
-    resave: false,
+    resave: true,
     saveUninitialized: true,
-    cookie: {},
+    cookie: {
+      secure: false,
+      expires: new Date(Date.now() + 90 * 86400 * 1000),
+    },
   })
 );
 app.use(flash());
