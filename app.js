@@ -32,7 +32,7 @@ app.use(
   session({
     secret: "keyboard cat",
     resave: true,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie: {
       secure: false,
       expires: new Date(Date.now() + 90 * 86400 * 1000),
